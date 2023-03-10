@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.digua.business.list.viewmodel.ListViewModel" />
+
+        <variable
+            name="em"
+            type="com.digua.business.list.viewmodel.ListViewModel.ACTION_TYPE" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:visibility="visible"
+            app:navigationIcon="@drawable/ic_arrow_back_dark_24dp"
+            app:title="标题"
+            tools:visibility="visible" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:onClick="@{v -> vm.action(em.CHANGE_LAYOUT)}"
+            android:text="点击"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+</layout>

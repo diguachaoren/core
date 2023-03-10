@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+在Android P系统的设备上
+如果应用使用的是非加密的明文流量的http网络请求
+则会导致该应用无法进行网络请求，https则不会受影响
+同样地
+如果应用嵌套了webview
+webview也只能使用https请求
+ -->
+
+<network-security-config>
+  <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

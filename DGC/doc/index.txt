@@ -1,0 +1,22 @@
+Business
+   > XXX
+		> activity
+			> XXXActivity.java
+		> adapter
+			> XXXAdapter.java
+		> viewmodel
+			> XXXViewModel.java
+		> fragment
+			> XXXFragment.java
+		> binding
+			> XXXBinding.java
+
+Type
+	> list
+	> login
+
+Layout
+	> list
+	> list-item
+	> userEntity-page
+	> normal-cell

@@ -1,0 +1,27 @@
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    google()
+    mavenCentral()
+  }
+}
+dependencyResolutionManagement {
+  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+  repositories {
+    google()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+//    maven { url 'https://maven.aliyun.com/repository/jcenter' } // <= here
+//    maven { url 'https://maven.aliyun.com/repository/google' } // <= here
+    jcenter() // 保留
+    google() // 保留
+
+    flatDir {
+      dirs 'libs'
+    }
+
+  }
+}
+rootProject.name = "Digua"
+include ':app'
+include ':DGC'

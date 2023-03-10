@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.digua.business.test1.viewmodel.RxJavaTestViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="无序merge队列"
+            android:textSize="25sp" />
+
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="有序concat队列"
+            android:textSize="25sp" />
+
+        <TextView
+            android:textColor="@{vm.requestNum ? @color/c_80D1C8 : @color/red}"
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="123123"
+                android:text="@{vm.msg}"
+                android:textSize="20sp" />
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+
+
+</layout>

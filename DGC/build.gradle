@@ -1,0 +1,117 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+    id "org.jetbrains.kotlin.android" version "1.8.0-Beta"
+
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+            }
+        }
+    }
+}
+
+android {
+    namespace 'com.digua.core'
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    publishing {
+        singleVariant("release")
+    }
+
+}
+
+
+
+
+
+
+dependencies {
+
+    //==>【Android component】
+    api 'com.google.android.material:material:1.5.0'
+    //==>【Android X】
+    api 'androidx.appcompat:appcompat:1.4.1'
+    api 'androidx.constraintlayout:constraintlayout:2.1.4'
+    api 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    api 'androidx.lifecycle:lifecycle-process:2.3.1'
+    //==>【kotlin】
+    api "org.jetbrains.kotlin:kotlin-stdlib:1.5.31"
+    api 'androidx.core:core-ktx:1.6.0'
+    //==>【RxJava】
+    api 'io.reactivex.rxjava2:rxjava:2.1.7'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    //==>【retrofit2】
+    api 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    //==>【okhttp3】
+    api 'com.squareup.okhttp3:okhttp:3.9.0'
+    api 'com.squareup.okhttp3:okhttp-urlconnection:3.9.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    //==>【分包】
+    api 'androidx.multidex:multidex:2.0.1'
+    //==>【Toasty】
+    api 'com.github.GrenderG:Toasty:1.5.2'
+    //==>【listview 头部和底部】
+    api 'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
+    api 'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+    api 'com.scwang.smart:refresh-header-radar:2.0.3'       //雷达刷新头
+    api 'com.scwang.smart:refresh-header-falsify:2.0.3'     //虚拟刷新头
+    api 'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头
+    api 'com.scwang.smart:refresh-header-two-level:2.0.3'   //二级刷新头
+    api 'com.scwang.smart:refresh-footer-ball:2.0.3'        //球脉冲加载
+    api 'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载
+    //==>【materialprogressbar progress】
+    api 'me.zhanghai.android.materialprogressbar:library:1.6.1'
+    //==>【圆角】
+    api 'de.hdodenhof:circleimageview:2.1.0'
+    //==>【EventBus】
+    api 'org.greenrobot:eventbus:3.3.1'
+    //==>【图片选择】
+    api 'io.github.lucksiege:pictureselector:v3.10.7'
+    api 'io.github.lucksiege:compress:v3.10.7'
+    api 'io.github.lucksiege:ucrop:v3.10.7'
+    api 'io.github.lucksiege:camerax:v3.10.7'
+    //==>【glide】
+    api 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' // annotationProcessor
+    api 'com.github.bumptech.glide:okhttp3-integration:4.12.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+
+    //==>【毛玻璃】
+    api 'com.github.mmin18:realtimeblurview:1.0.6'
+
+    //==>【等待按钮】
+    api 'com.github.razir.progressbutton:progressbutton:2.1.0'
+
+
+}

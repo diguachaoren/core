@@ -1,0 +1,132 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.digua.base'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.digua.base"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+        // room生成的文件路径
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+
+    signingConfigs {
+        debug {
+            storeFile file('key/digua.jks')
+            keyAlias = 'digua'
+            keyPassword 'diguachaoren'
+            storePassword 'diguachaoren'
+        }
+        release {
+            storeFile file('key/digua.jks')
+            keyAlias = 'digua'
+            keyPassword 'diguachaoren'
+            storePassword 'diguachaoren'
+        }
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+
+
+    //特色产品:同一套代码生产出不同特色的产品
+    flavorDimensions "channel"
+    productFlavors {
+
+        双屏 {
+            versionCode 1
+            versionName "1.0"
+            applicationId "com.digua.doublescreen"
+            manifestPlaceholders = [
+                    package_name : applicationId,
+                    CHANNEL      : "double_screen",
+                    name         : "双屏",
+                    appIcon      : "@mipmap/potato_double",
+                    JPUSH_PKGNAME: applicationId,
+                    JPUSH_APPKEY : "xxxxxxxxxxxxxxxxxxxxxx",
+                    JPUSH_CHANNEL: "developer-default",
+            ]
+            dimension = "channel"
+        }
+
+        卧式 {
+            versionCode 1
+            versionName "1.0"
+            applicationId "com.digua.woshi"
+            manifestPlaceholders = [
+                    package_name : applicationId,
+                    CHANNEL      : "woshi_screen",
+                    name         : "卧式",
+                    appIcon      : "@mipmap/potato2",
+                    JPUSH_PKGNAME: applicationId,
+                    JPUSH_APPKEY : "xxxxxxxxxxxxxxxxxxxxxx",
+                    JPUSH_CHANNEL: "developer-default",
+            ]
+
+            dimension = "channel"
+
+        }
+
+    }
+
+
+    //在apk文件后边生成版本号信息
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                outputFileName = productFlavors[0].name + "_" + buildType.name + "_v" + defaultConfig.versionName + ".apk"
+            }
+    }
+
+
+}
+
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation project(path: ':DGC')
+
+    // ==>【room】
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // RxJava support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+    // ==>【glide】
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+}
