@@ -1,6 +1,10 @@
 plugins {
     id 'com.android.application'
+    id 'maven-publish'
 }
+
+
+group = 'com.github.diguachaoren'
 
 android {
     namespace 'com.digua.base'
@@ -48,7 +52,7 @@ android {
         debug {
             minifyEnabled false
             proguardFiles 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
         }
 
 
