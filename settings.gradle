@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     maven { url "https://jitpack.io" }
 //    maven { url 'https://maven.aliyun.com/repository/jcenter' } // <= here
 //    maven { url 'https://maven.aliyun.com/repository/google' } // <= here
-    jcenter() // 保留
+    // jcenter() // 保留
     google() // 保留
 
     flatDir {

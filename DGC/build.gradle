@@ -82,14 +82,14 @@ dependencies {
     //==>【Toasty】
     api 'com.github.GrenderG:Toasty:1.5.2'
     //==>【listview 头部和底部】
-    api 'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
-    api 'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
-    api 'com.scwang.smart:refresh-header-radar:2.0.3'       //雷达刷新头
-    api 'com.scwang.smart:refresh-header-falsify:2.0.3'     //虚拟刷新头
-    api 'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头
-    api 'com.scwang.smart:refresh-header-two-level:2.0.3'   //二级刷新头
-    api 'com.scwang.smart:refresh-footer-ball:2.0.3'        //球脉冲加载
-    api 'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载
+//    api 'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
+//    api 'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+//    api 'com.scwang.smart:refresh-header-radar:2.0.3'       //雷达刷新头
+//    api 'com.scwang.smart:refresh-header-falsify:2.0.3'     //虚拟刷新头
+//    api 'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头
+//    api 'com.scwang.smart:refresh-header-two-level:2.0.3'   //二级刷新头
+//    api 'com.scwang.smart:refresh-footer-ball:2.0.3'        //球脉冲加载
+//    api 'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载
     //==>【materialprogressbar progress】
     api 'me.zhanghai.android.materialprogressbar:library:1.6.1'
     //==>【圆角】
@@ -108,7 +108,7 @@ dependencies {
     api 'com.squareup.okhttp3:logging-interceptor:3.9.1'
 
     //==>【毛玻璃】
-    api 'com.github.mmin18:realtimeblurview:1.0.6'
+    // api 'com.github.mmin18:realtimeblurview:1.0.6'
 
     //==>【等待按钮】
     api 'com.github.razir.progressbutton:progressbutton:2.1.0'
