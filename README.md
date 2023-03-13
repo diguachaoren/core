@@ -1,0 +1,30 @@
+# core
+
+# settings.gradle
+```java
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+rootProject.name = "My Application"
+include ':app'
+
+```
+
+# build.gradle
+```java
+dependencies {
+	        implementation 'com.github.diguachaoren:core:0.0.12'
+}
+```
