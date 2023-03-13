@@ -28,13 +28,13 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file('./key/digua.jks')
+            storeFile file('key/digua.jks')
             keyAlias = 'digua'
             keyPassword 'diguachaoren'
             storePassword 'diguachaoren'
         }
         release {
-            storeFile file('./key/digua.jks')
+            storeFile file('key/digua.jks')
             keyAlias = 'digua'
             keyPassword 'diguachaoren'
             storePassword 'diguachaoren'
@@ -46,13 +46,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            //signingConfig signingConfigs.release
         }
 
         debug {
             minifyEnabled false
             proguardFiles 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
+            //signingConfig signingConfigs.debug
         }
 
 
